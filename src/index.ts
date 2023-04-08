@@ -8,7 +8,7 @@ import type Token from "markdown-it/lib/token";
 const MARKER_START = 0x7B;
 const MARKER_END = 0x7D;
 
-function parseVariableDef(state: StateBlock, startLine: number, endLine: number, silent: boolean) {
+function parseVariableDef(state: StateBlock, startLine: number, _endLine: number, silent: boolean) {
 	let start = state.bMarks[startLine] + state.tShift[startLine];
 	let max = state.eMarks[startLine];
 
@@ -153,7 +153,7 @@ function renderVariable(tokens: Token[], idx: number, options: any, env: any, se
 	return self.renderInline(tokens[idx].children || [], options, env);
 }
 
-function renderVariableDefinition(tokens: Token[], idx: number, options: any, env: any, self: Renderer) {
+function renderVariableDefinition(tokens: Token[], idx: number, _options: any, env: any, _self: Renderer) {
 	let token = tokens[idx];
 	let variable = env.variables[token.meta.name];
 
