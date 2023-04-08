@@ -1,7 +1,7 @@
 {
-  "name": "markdown-it-plugin-template",
+  "name": "markdown-it-variable",
   "version": "1.0.0",
-  "description": "A template for markdown-it plugins",
+  "description": "A markdown-it plugin, which allows defining variables",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "scripts": {
@@ -12,14 +12,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/bioruebe/markdown-it-plugin-template"
+    "url": "https://github.com/bioruebe/markdown-it-variable"
   },
   "author": "bioruebe",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bioruebe/markdown-it-plugin-template/issues"
+    "url": "https://github.com/bioruebe/markdown-it-variable/issues"
   },
-  "homepage": "https://github.com/bioruebe/markdown-it-plugin-template",
+  "homepage": "https://github.com/bioruebe/markdown-it-variable",
   "keywords": [
     "markdown",
     "markdown-it",

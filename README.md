@@ -1,32 +1,66 @@
-# markdown-it-plugin-template
+# markdown-it-variable
 
-This repository provides a template for creating plugins for [markdown-it](https://github.com/markdown-it/markdown-it), a popular Markdown parser for JavaScript.
+![npm](https://img.shields.io/npm/v/markdown-it-variable) ![Tests](https://github.com/Bioruebe/markdown-it-variable/workflows/Tests/badge.svg) ![markdown-it](https://img.shields.io/npm/dependency-version/markdown-it-variable/peer/markdown-it)
 
-## Features
+> A markdown-it plugin, which allows defining variables, which can then be referenced in the document and are auto-replaced with the specified content
 
-- Standardized project structure
-- Vite and Typescript
-- Automatic test case generation based on input (`.md`)  and output (`.html`) files
-- Fast testing via Vitest, allowing test-first development and quick iterations
+## Usage
 
-## Getting Started
+### Install
 
-To create a new markdown-it plugin using this template, simply click the button `Use this template` above.
+```bash
+npm install markdown-it-variable
+```
 
-## Project structure
+### Enable
 
-- `src/index.ts` is the plugin entry point
-- `docs` may be used for additional documentation files, such as a preview image
-- `test` contains the fixtures used to test the plugin
+```js
+const markdown_it = require("markdown-it");
+const markdown-it-variable= require("markdown-it-variable");
+const md = markdown_it().use(markdown-it-variable);
+```
 
-### Automatic testing
+### Syntax
 
-This template uses file-based test definitions (fixtures). For each test, you create an input markdown file and the corresponding HTML output. Both files must have the same name, which is then used as the name of the test case. Folders can be used to create test suites, e.g. `test/invalid-syntax` containing different cases of wrong usage of the plugin.
+You can define variables at any position of the document:
 
-## Developing Your Plugin
+```md
+{{> variableName variableContent }}
+{{> anotherVariable moreContent }}
+```
 
-1. Install the required dependencies by running `npm install`.
-2. Specify the desired input/output by creating Markdown and HTML files inside the `/test` directory. Use sub-directories to group them.
-3. Start vitest watch mode: `npm run dev`
-4. Customize the file `src/index.ts` to provide the functionality you need.
-5. Build the plugin: `npm run build`
+Then, reference it anywhere:
+
+```md
+This will be replaced: {{ variableName }}
+```
+
+will be rendered as
+
+```html
+This will be replaced: variableContent
+```
+
+#### Variable definition
+
+- Each variable must be on its **own line**.
+
+- The name must not contain any spaces or special characters, **only alphanumeric characters** are allowed.
+
+- The definitions will not be rendered to keep your document clean. However, if a variable is not referenced, the definition will be visible to make you aware of this fact.
+
+#### Variable content
+
+- Formatting via Markdown is possible:
+  
+  ```md
+  {{> title *Markdown-it* **Variables** plugin }}
+  ```
+
+- Variables can only span **a single line**, you cannot reference whole paragraphes or complex markup such as lists.
+
+- Spaces around the brackets are optional:
+  
+  ```md
+  This is the {{title}}
+  ```

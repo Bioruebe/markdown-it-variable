@@ -1,0 +1,6 @@
+{{ var }}
+
+{{> var
+Hello
+World
+}}
