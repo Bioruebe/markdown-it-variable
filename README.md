@@ -15,9 +15,15 @@ npm install markdown-it-variable
 ### Enable
 
 ```js
+// ESM
+import MarkdownIt from "markdown-it";
+import MarkdownItVariable from "markdown-it-variable";
+const md = new MarkdownIt().use(MarkdownItVariable, options);
+
+// CommonJS
 const markdown_it = require("markdown-it");
-const markdown-it-variable= require("markdown-it-variable");
-const md = markdown_it().use(markdown-it-variable);
+const markdown_it_variable = require("markdown-it-variable");
+const md = markdown_it().use(markdown_it_variable);
 ```
 
 ### Syntax
@@ -45,9 +51,11 @@ This will be replaced: variableContent
 
 - Each variable must be on its **own line**.
 
-- The name must not contain any spaces or special characters, **only alphanumeric characters** are allowed.
+- The variable name must not contain any spaces or special characters, **only alphanumeric characters** are allowed.
 
-- The definitions will not be rendered to keep your document clean. However, if a variable is not referenced, the definition will be visible to make you aware of this fact.
+- The **definitions will not be rendered** to keep your document clean. However, if a variable is not referenced, the definition will be visible to make you aware of this fact.
+
+- Definitions can be **placed anywhere** in the document.
 
 #### Variable content
 
@@ -58,6 +66,8 @@ This will be replaced: variableContent
   ```
 
 - Variables can only span **a single line**, you cannot reference whole paragraphes or complex markup such as lists.
+
+- Variable content can contain markup handled by other plugins.
 
 - Spaces around the brackets are optional:
   
