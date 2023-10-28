@@ -1,6 +1,6 @@
 # markdown-it-variable
 
-![npm](https://img.shields.io/npm/v/markdown-it-variable) ![Tests](https://github.com/Bioruebe/markdown-it-variable/actions/workflows/node.js.yml/badge.svg) ![markdown-it](https://img.shields.io/npm/dependency-version/markdown-it-variable/peer/markdown-it)
+[![npm](https://img.shields.io/npm/v/markdown-it-variable)](https://www.npmjs.com/package/markdown-it-variable) ![Tests](https://github.com/Bioruebe/markdown-it-variable/actions/workflows/node.js.yml/badge.svg) ![markdown-it](https://img.shields.io/npm/dependency-version/markdown-it-variable/peer/markdown-it)
 
 > A markdown-it plugin, which allows defining variables, which can then be referenced in the document and are auto-replaced with the specified content
 
