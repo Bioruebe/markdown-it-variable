@@ -21,9 +21,9 @@ import MarkdownItVariable from "markdown-it-variable";
 const md = new MarkdownIt().use(MarkdownItVariable, options);
 
 // CommonJS
-const markdown_it = require("markdown-it");
-const markdown_it_variable = require("markdown-it-variable");
-const md = markdown_it().use(markdown_it_variable);
+const markdownIt = require("markdown-it");
+const markdownItVariable = require("markdown-it-variable");
+const md = markdownIt().use(markdownItVariable);
 ```
 
 ### Syntax
