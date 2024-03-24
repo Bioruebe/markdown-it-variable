@@ -1,6 +1,6 @@
 {
   "name": "markdown-it-variable",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A markdown-it plugin, which allows defining variables",
   "type": "module",
   "exports": {
