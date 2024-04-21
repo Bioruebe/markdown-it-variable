@@ -161,6 +161,14 @@ function renderVariableDefinition(tokens: Token[], idx: number, _options: any, e
 }
 
 
+/**
+ * A markdown-it plugin, which allows defining variables.
+ *
+ * Variables are defined using the following syntax:
+ * `{{> variableName variableContent }}`
+ * and can then be referenced:
+ * `{{ variableName }}`
+*/
 export default function variablePlugin(md: MarkdownIt) {
 	md.renderer.rules.variable = renderVariable;
 	md.renderer.rules.variable_definition = renderVariableDefinition;
