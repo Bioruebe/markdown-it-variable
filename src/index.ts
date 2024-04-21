@@ -1,8 +1,5 @@
 import type MarkdownIt from "markdown-it";
-import type Renderer from "markdown-it/lib/renderer";
-import type StateBlock from "markdown-it/lib/rules_block/state_block";
-import type StateInline from "markdown-it/lib/rules_inline/state_inline";
-import type Token from "markdown-it/lib/token";
+import type { Renderer, StateBlock, StateInline, Token } from "markdown-it";
 
 
 const MARKER_START = 0x7B;
